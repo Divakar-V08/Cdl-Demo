@@ -18,9 +18,9 @@ pipeline {
 
         stage('Build commercial-microservice Docker Image') {
             steps {
-                docker stop cdl-commercial
-                docker rm cdl-commercial
-                docker rmi cdl-commercial:v1
+                sh 'docker stop cdl-commercial'
+                sh 'docker rm cdl-commercial'
+                sh 'docker rmi cdl-commercial:v1'
 
                 echo "Executing Build Docker Image"
                 sh 'docker build -f ./Dockerfile.commercial -t cdl-commercial:v1 ./'
@@ -29,9 +29,9 @@ pipeline {
 
         stage('Build industrial-microservice Docker Image') {
             steps {
-                docker stop cdl-industrial
-                docker rm cdl-industrial
-                docker rmi cdl-industrial:v1
+                sh 'docker stop cdl-industrial'
+                sh 'docker rm cdl-industrial'
+                sh 'docker rmi cdl-industrial:v1'
 
                 echo "Executing Build Docker Image"
                 sh 'docker build -f ./Dockerfile.industrial -t cdl-industrial:v1 ./'
@@ -40,9 +40,9 @@ pipeline {
 
         stage('Build residential-microservice Docker Image') {
             steps {
-                docker stop cdl-residential
-                docker rm cdl-residential
-                docker rmi cdl-residential:v1
+                sh 'docker stop cdl-residential'
+                sh 'docker rm cdl-residential'
+                sh 'docker rmi cdl-residential:v1'
 
                 echo "Executing Build Docker Image"
                 sh 'docker build -f ./Dockerfile.residential -t cdl-residential:v1 ./'
