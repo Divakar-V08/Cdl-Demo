@@ -5,13 +5,6 @@ pipeline {
         githubPush()
     }
 
-    environment {
-        IMAGE_NAME = "my-spring-app"
-        CONTAINER_NAME = "springboot-container"
-        DOCKER_HUB_USER = "your-dockerhub-username"
-        DOCKER_HUB_PASS = credentials('docker-hub-password')
-    }
-
     stages {
         stage('Clone Repository') {
             steps {
@@ -30,7 +23,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 echo "Executing Build Docker Image"
-                sh 'docker build -t $IMAGE_NAME .'
+                sh 'docker build -t my-spring-app .'
             }
         }
 
@@ -38,8 +31,8 @@ pipeline {
             steps {
                 echo "Executing Push to Docker Hub"
                 withDockerRegistry([credentialsId: 'docker-hub-password', url: '']) {
-                    sh 'docker tag $IMAGE_NAME $DOCKER_HUB_USER/$IMAGE_NAME'
-                    sh 'docker push $DOCKER_HUB_USER/$IMAGE_NAME'
+                    sh 'docker tag my-spring-app your-dockerhub-username/my-spring-app'
+                    sh 'docker push your-dockerhub-username/my-spring-app'
                 }
             }
         }
@@ -49,10 +42,10 @@ pipeline {
                 echo "Executing Deploy to Server"
                 sshagent(['server-ssh-key']) {
                     sh '''
-                        ssh user@your-server "docker pull $DOCKER_HUB_USER/$IMAGE_NAME && \
-                        docker stop $CONTAINER_NAME || true && \
-                        docker rm $CONTAINER_NAME || true && \
-                        docker run -d --name $CONTAINER_NAME -p 8080:8080 $DOCKER_HUB_USER/$IMAGE_NAME"
+                        ssh user@your-server "docker pull your-dockerhub-username/my-spring-app && \
+                        docker stop springboot-container || true && \
+                        docker rm springboot-container || true && \
+                        docker run -d --name springboot-container -p 8080:8080 your-dockerhub-username/my-spring-app"
                     '''
                 }
             }
