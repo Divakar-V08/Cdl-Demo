@@ -5,7 +5,7 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 echo "Executing Clone Repository"
-                git 'https://github.com/Divakar-V08/Cdl-Demo.git'
+                git branch: 'main', url: 'https://github.com/Divakar-V08/Cdl-Demo.git'
             }
         }
 
