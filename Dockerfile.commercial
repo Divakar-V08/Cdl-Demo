@@ -1,0 +1,12 @@
+# Use an official Java runtime as a parent image
+FROM openjdk:17-jdk-slim
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the JAR file into the container
+COPY /Users/divakarv/Desktop/work/gitlab/CDL-Demo/Commercial-Microservice/target/Commercial-Microservice-1.0-SNAPSHOT.jar .
+
+
+# Command to run the JAR file
+ENTRYPOINT ["java", "-Dspring.data.mongodb.uri=mongodb://apiwiz-admin:e4s6q2peBL9L9JC4@10.10.17.206:27017/cdl?authSource=admin", "-jar", "/app/Commercial-Microservice-1.0-SNAPSHOT.jar"]
