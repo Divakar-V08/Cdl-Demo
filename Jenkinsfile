@@ -5,7 +5,7 @@ pipeline {
         IMAGE_NAME = "my-spring-app"
         CONTAINER_NAME = "springboot-container"
         DOCKER_HUB_USER = "your-dockerhub-username"
-        DOCKER_HUB_PASS = credentials('docker-hub-password')  // Set in Jenkins Credentials
+        DOCKER_HUB_PASS = credentials('docker-hub-password') // Set in Jenkins Credentials
     }
 
     stages {
