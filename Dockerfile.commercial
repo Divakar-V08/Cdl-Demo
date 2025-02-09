@@ -5,7 +5,7 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 # Copy the JAR file into the container
-COPY /Users/divakarv/Desktop/work/gitlab/CDL-Demo/Commercial-Microservice/target/Commercial-Microservice-1.0-SNAPSHOT.jar .
+COPY ./Commercial-Microservice/target/Commercial-Microservice-1.0-SNAPSHOT.jar .
 
 
 # Command to run the JAR file
