@@ -16,10 +16,60 @@ pipeline {
             }
         }
 
-        stage('Build Docker Image') {
+        stage('Build commercial-microservice Docker Image') {
             steps {
+                docker stop cdl-commercial
+                docker rm cdl-commercial
+                docker rmi cdl-commercial:v1
+
                 echo "Executing Build Docker Image"
                 sh 'docker build -f ./Dockerfile.commercial -t cdl-commercial:v1 ./'
+            }
+        }
+
+        stage('Build industrial-microservice Docker Image') {
+            steps {
+                docker stop cdl-industrial
+                docker rm cdl-industrial
+                docker rmi cdl-industrial:v1
+
+                echo "Executing Build Docker Image"
+                sh 'docker build -f ./Dockerfile.industrial -t cdl-industrial:v1 ./'
+            }
+        }
+
+        stage('Build residential-microservice Docker Image') {
+            steps {
+                docker stop cdl-residential
+                docker rm cdl-residential
+                docker rmi cdl-residential:v1
+
+                echo "Executing Build Docker Image"
+                sh 'docker build -f ./Dockerfile.residential -t cdl-residential:v1 ./'
+            }
+        }
+
+        stage('Start commercial-microservice Docker Container') {
+            steps {
+
+                echo "Executing start Docker Image"
+                sh 'docker run --name cdl-commercial -d -p 6081:8080 --restart=on-failure cdl-commercial:v1'
+            }
+        }
+
+        stage('Start residential-microservice Docker Container') {
+            steps {
+
+                echo "Executing start Docker Image"
+                sh 'docker run --name cdl-residential -d -p 6083:8080 --restart=on-failure cdl-residential:v1'
+            }
+        }
+
+        stage('Start industrial-microservice Docker Container') {
+            steps {
+
+                echo "Executing start Docker Image"
+                sh 'docker run --name cdl-industrial -d -p 6082:8080 --restart=on-failure cdl-industrial:v1'
             }
         }
     }
