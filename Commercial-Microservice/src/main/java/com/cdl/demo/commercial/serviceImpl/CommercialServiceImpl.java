@@ -86,9 +86,4 @@ public class CommercialServiceImpl implements CommercialService {
     public ResponseEntity<?> getProperties() {
         return ResponseEntity.ok(properties);
     }
-
-    @Override
-    public ResponseEntity<?> getPropertyListings() {
-        return ResponseEntity.ok(properties);
-    }
 }

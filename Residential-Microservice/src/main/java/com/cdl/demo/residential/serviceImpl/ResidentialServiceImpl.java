@@ -91,9 +91,4 @@ public class ResidentialServiceImpl implements ResidentialService {
     public ResponseEntity<?> getProperties() {
         return ResponseEntity.ok(properties);
     }
-
-    @Override
-    public ResponseEntity<?> getPropertyListings() {
-        return ResponseEntity.ok(properties);
-    }
 }
