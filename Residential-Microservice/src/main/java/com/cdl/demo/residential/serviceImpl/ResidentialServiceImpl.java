@@ -88,11 +88,6 @@ public class ResidentialServiceImpl implements ResidentialService {
     }
 
     @Override
-    public ResponseEntity<?> getPropertyByName(String id) {
-        return null;
-    }
-
-    @Override
     public ResponseEntity<?> getProperties() {
         return ResponseEntity.ok(properties);
     }

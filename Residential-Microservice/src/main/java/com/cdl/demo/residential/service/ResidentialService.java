@@ -32,11 +32,6 @@ public interface ResidentialService {
             @PathVariable String id
     );
 
-    @GetMapping("/properties/name")
-    public ResponseEntity<?> getPropertyByName(
-            @PathVariable String id
-    );
-
     @GetMapping("/properties")
     public ResponseEntity<?> getProperties();
 }
