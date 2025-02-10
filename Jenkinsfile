@@ -49,7 +49,7 @@ pipeline {
             }
         }
 
-        stage('Start commercial-microservice Docker Container') {
+        stage('Run commercial-microservice Docker Container') {
             steps {
 
                 echo "Executing start Docker Image"
@@ -57,7 +57,7 @@ pipeline {
             }
         }
 
-        stage('Start residential-microservice Docker Container') {
+        stage('Run residential-microservice Docker Container') {
             steps {
 
                 echo "Executing start Docker Image"
@@ -65,7 +65,7 @@ pipeline {
             }
         }
 
-        stage('Start industrial-microservice Docker Container') {
+        stage('Run industrial-microservice Docker Container') {
             steps {
 
                 echo "Executing start Docker Image"
