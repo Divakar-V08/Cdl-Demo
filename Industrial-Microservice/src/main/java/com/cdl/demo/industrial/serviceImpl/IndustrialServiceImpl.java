@@ -26,7 +26,7 @@ import java.util.List;
 @ModuleScanner(moduleName = "Industrial")
 public class IndustrialServiceImpl implements IndustrialService {
 
-    List<Property> properties = new ArrayList<>();
+    public static List<Property> properties = new ArrayList<>();
 
     @PostConstruct
     public void loadData() {

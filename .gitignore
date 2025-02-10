@@ -1,1 +1,79 @@
 /*/target/
+*.iml
+.idea
+/.idea/
+/*.iml
+/*.ipr
+/*.iws
+/out/
+# Ignore compiled classes
+/**/*.class
+
+# Ignore generated files
+/*.war
+/*.jar
+/*.ear
+
+# Ignore Maven & Gradle build directories
+/target/
+/build/
+
+# Ignore logs and temp files
+/logs/
+/*.log
+/tmp/
+/hs_err_pid*
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore environment and configuration files
+/.env
+/*.env
+/.config/
+/application.properties
+/application.yml
+/secrets.yml
+
+# Ignore dependency directories
+/node_modules/
+/lib/
+
+# Ignore database files
+/h2db/
+/*.db
+
+# Ignore Spring Boot-specific files
+/spring-boot-devtools.properties
+/.mvn/
+/.mvn/wrapper/maven-wrapper.jar
+
+# Ignore Lombok generated files
+/lombok.config
+
+# Ignore coverage reports
+/coverage/
+/jacoco.exec
+/jacoco-report/
+
+# Ignore Docker and Kubernetes files (if applicable)
+/docker-compose.yml
+/k8s/
+
+/*.pid
+/*.seed
+/*.key
+
+# Ignore test reports
+/surefire-reports/
+/test-output/
+
+# Ignore files related to IDE settings
+/.classpath
+/.project
+/.settings/
+
+# Ignore IntelliJ IDEA and Eclipse project files
+*.ipr
+*.iws

@@ -27,7 +27,7 @@ import java.util.List;
 @ModuleScanner(moduleName = "Residential")
 public class ResidentialServiceImpl implements ResidentialService {
 
-    List<Property> properties = new ArrayList<>();
+    public static List<Property> properties = new ArrayList<>();
 
     @PostConstruct
     public void loadData() {

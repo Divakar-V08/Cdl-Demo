@@ -22,7 +22,7 @@ import java.util.List;
 @ModuleScanner(moduleName = "Commercial")
 public class CommercialServiceImpl implements CommercialService {
 
-    List<Property> properties = new ArrayList<>();
+    public static List<Property> properties = new ArrayList<>();
 
     @PostConstruct
     public void loadData() {
