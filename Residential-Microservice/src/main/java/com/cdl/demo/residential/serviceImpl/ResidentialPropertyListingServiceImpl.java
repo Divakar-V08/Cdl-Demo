@@ -13,6 +13,7 @@ public class ResidentialPropertyListingServiceImpl implements ResidentialPropert
 
     @Override
     public ResponseEntity<?> getPropertyListings() {
+
         return ResponseEntity.ok(ResidentialServiceImpl.properties);
     }
 }
