@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @CrossOrigin
 @RestController
-//@ModuleScanner(moduleName = "Residential Property Listing")
+@ModuleScanner(moduleName = "Residential Property Listing")
 public class ResidentialPropertyListingServiceImpl implements ResidentialPropertyListingService {
 
     @Override
