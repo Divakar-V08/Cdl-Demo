@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin
 @RestController
 @RequestMapping("/v1/industrial")
-@ModuleScanner(moduleName = "Property Listing")
+@ModuleScanner(moduleName = "Industrial Property Listing")
 public interface IndustrialPropertyListingService {
 
     @GetMapping("/listings")

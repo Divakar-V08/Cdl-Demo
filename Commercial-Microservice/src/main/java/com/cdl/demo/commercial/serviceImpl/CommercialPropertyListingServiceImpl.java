@@ -20,7 +20,7 @@ import java.util.List;
 
 @CrossOrigin
 @RestController
-@ModuleScanner(moduleName = "Property Listing")
+@ModuleScanner(moduleName = "Commercial Property Listing")
 public class CommercialPropertyListingServiceImpl implements CommercialPropertyListingService {
 
     @Override
