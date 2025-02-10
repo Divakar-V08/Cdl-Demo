@@ -34,7 +34,4 @@ public interface CommercialService {
 
     @GetMapping("/properties")
     public ResponseEntity<?> getProperties();
-
-    @GetMapping("/listings")
-    public ResponseEntity<?> getPropertyListings();
 }

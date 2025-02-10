@@ -34,7 +34,4 @@ public interface ResidentialService {
 
     @GetMapping("/properties")
     public ResponseEntity<?> getProperties();
-
-    @GetMapping("/listings")
-    public ResponseEntity<?> getPropertyListings();
 }

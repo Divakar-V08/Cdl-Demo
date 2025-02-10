@@ -34,7 +34,4 @@ public interface IndustrialService {
 
     @GetMapping("/properties")
     public ResponseEntity<?> getProperties();
-
-    @GetMapping("/listings")
-    public ResponseEntity<?> getPropertyListings();
 }
