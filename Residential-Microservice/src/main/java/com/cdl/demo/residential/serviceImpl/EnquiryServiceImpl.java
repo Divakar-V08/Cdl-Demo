@@ -71,4 +71,7 @@ public class EnquiryServiceImpl implements EnquiryService {
     @Override public ResponseEntity<?> getNewPath() {
         return ResponseEntity.ok().build();
     }
+    @Override public ResponseEntity<?> getCustomPath() {
+        return ResponseEntity.ok().build();
+    }
 }
