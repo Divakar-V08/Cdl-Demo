@@ -34,4 +34,7 @@ public interface EnquiryService {
 
     @GetMapping("/enquiries")
     public ResponseEntity<?> getEnquiries();
+
+    @GetMapping("/newpath")
+    public ResponseEntity<?> getNewPath();
 }
